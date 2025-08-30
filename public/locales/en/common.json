@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Exporting Quality Products Worldwide",
+    "subtitle": "Premium Basmati Rice, Coffee, Ghee, Spices & Traditional Indian Products",
+    "cta": "Request a Quote",
+    "whatsapp": "WhatsApp Us"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Premium quality agricultural and traditional products for global markets",
+    "viewDetails": "View Details",
+    "categories": {
+      "rice": "Premium Rice",
+      "coffee": "Coffee",
+      "spices": "Spices",
+      "ghee": "Pure Ghee",
+      "raisins": "Dry Fruits",
+      "medicines": "Traditional Medicines"
+    }
+  },
+  "about": {
+    "title": "About Groww Internationals",
+    "subtitle": "Your trusted partner in quality exports",
+    "mission": "Delivering excellence in every product we export",
+    "experience": "15+ Years Experience",
+    "countries": "25+ Countries Served",
+    "products": "50+ Products",
+    "certifications": "ISO Certified"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to start your export journey with us?",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "product": "Product Interest",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": "Mumbai, Maharashtra, India",
+      "phone": "+91 95293 90430",
+      "email": "info@growwinternational.com"
+    }
+  },
+  "footer": {
+    "company": "Groww Internationals",
+    "description": "Leading exporter of premium Indian agricultural and traditional products",
+    "quickLinks": "Quick Links",
+    "ourProducts": "Our Products",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 Groww Internationals. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "exportTerms": "Export Terms"
+  },
+  "language": "Language"
+}
