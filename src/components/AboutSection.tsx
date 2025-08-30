@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Award, Globe, Clock, Truck, Users, Heart, CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -59,11 +60,11 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-muted/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div>
+          <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-border/20">
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-6">
               {t('about.title')}
             </h2>
@@ -84,7 +85,7 @@ const AboutSection = () => {
                 {certifications.map((cert, index) => (
                   <div key={index} className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-secondary mr-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{cert}</span>
+                    <span className="text-sm text-foreground/80">{cert}</span>
                   </div>
                 ))}
               </div>
@@ -94,9 +95,9 @@ const AboutSection = () => {
           {/* Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6 bg-gradient-card border-border/50 hover:shadow-elegant transition-smooth group">
+              <Card key={index} className="p-6 bg-card/80 backdrop-blur-sm border border-border/30 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  <div className="flex-shrink-0 p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-lg">
                     {feature.icon}
                   </div>
                   <div>
@@ -114,21 +115,21 @@ const AboutSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 pt-16 border-t border-border">
+        <div className="mt-16 pt-16 border-t border-border/30">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/20">
               <div className="text-3xl font-bold text-primary mb-2">15+</div>
               <div className="text-sm text-muted-foreground">{t('about.experience')}</div>
             </div>
-            <div>
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/20">
               <div className="text-3xl font-bold text-primary mb-2">25+</div>
               <div className="text-sm text-muted-foreground">{t('about.countries')}</div>
             </div>
-            <div>
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/20">
               <div className="text-3xl font-bold text-primary mb-2">50+</div>
               <div className="text-sm text-muted-foreground">{t('about.products')}</div>
             </div>
-            <div>
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/20">
               <div className="text-3xl font-bold text-primary mb-2">ISO</div>
               <div className="text-sm text-muted-foreground">{t('about.certifications')}</div>
             </div>
