@@ -18,7 +18,7 @@ const Header = () => {
     { name: t('nav.contact'), href: "#contact" },
   ];
 
-  const whatsappNumber = "+919529390430";
+  const whatsappNumber = "+917350072855";
   const whatsappMessage = "Hello! I'm interested in your export services.";
 
   return (
@@ -28,8 +28,8 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
             <Logo size={40} />
-            <h1 className="text-2xl font-display font-bold text-primary">
-              Groww Internationals
+            <h1 className="text-xl sm:text-2xl font-display font-bold text-primary">
+              Global Grow Exports
             </h1>
           </div>
 
@@ -39,9 +39,10 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-smooth font-medium"
+                className="text-foreground hover:text-primary transition-smooth font-medium relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
@@ -53,6 +54,7 @@ const Header = () => {
               variant="cta" 
               size="sm"
               onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank')}
+              className="shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4" />
               {t('hero.whatsapp')}
@@ -64,41 +66,49 @@ const Header = () => {
             className="md:hidden p-2 rounded-md text-foreground hover:text-primary hover:bg-accent transition-smooth"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Menu className="h-6 w-6" />
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-smooth font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="flex items-center space-x-4 pt-4">
-                <LanguageSwitcher />
-                <Button 
-                  variant="cta" 
-                  size="sm"
-                  onClick={() => {
-                    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  {t('hero.whatsapp')}
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <nav className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-smooth font-medium px-2 py-1 rounded-md hover:bg-accent/50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <div className="flex items-center space-x-4 pt-4 px-2">
+                  <LanguageSwitcher />
+                  <Button 
+                    variant="cta" 
+                    size="sm"
+                    onClick={() => {
+                      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    {t('hero.whatsapp')}
+                  </Button>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

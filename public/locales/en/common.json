@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "home": "Home",
@@ -8,13 +9,15 @@
   "hero": {
     "title": "Exporting Quality Products Worldwide",
     "subtitle": "Premium Basmati Rice, Coffee, Ghee, Spices & Traditional Indian Products",
-    "cta": "Request a Quote",
+    "cta": "Explore Products",
+    "contact": "Contact Us",
     "whatsapp": "WhatsApp Us"
   },
   "products": {
     "title": "Our Products",
     "subtitle": "Premium quality agricultural and traditional products for global markets",
     "viewDetails": "View Details",
+    "closeModal": "Close",
     "categories": {
       "rice": "Premium Rice",
       "coffee": "Coffee",
@@ -25,7 +28,7 @@
     }
   },
   "about": {
-    "title": "About Groww Internationals",
+    "title": "About Global Grow Exports",
     "subtitle": "Your trusted partner in quality exports",
     "mission": "Delivering excellence in every product we export",
     "experience": "15+ Years Experience",
@@ -45,19 +48,19 @@
       "submit": "Send Message"
     },
     "info": {
-      "address": "Mumbai, Maharashtra, India",
-      "phone": "+91 95293 90430",
-      "email": "info@growwinternational.com"
+      "address": "Nashik, Maharashtra, India",
+      "phone": "+91 73500 72855",
+      "email": "info@growwinternationals.com"
     }
   },
   "footer": {
-    "company": "Groww Internationals",
+    "company": "Global Grow Exports",
     "description": "Leading exporter of premium Indian agricultural and traditional products",
     "quickLinks": "Quick Links",
     "ourProducts": "Our Products",
     "contactInfo": "Contact Info",
     "followUs": "Follow Us",
-    "copyright": "© 2024 Groww Internationals. All rights reserved.",
+    "copyright": "© 2024 Global Grow Exports. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "exportTerms": "Export Terms"
