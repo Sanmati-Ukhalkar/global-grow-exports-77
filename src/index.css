@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,13 +9,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 50 20% 98%;
+    --background: 140 20% 96%;
     --foreground: 156 25% 15%;
 
-    --card: 0 0% 100%;
+    --card: 140 15% 98%;
     --card-foreground: 156 25% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 140 15% 98%;
     --popover-foreground: 156 25% 15%;
 
     --primary: 156 65% 25%;
@@ -23,7 +24,7 @@ All colors MUST be HSL.
     --secondary: 45 85% 70%;
     --secondary-foreground: 156 25% 15%;
 
-    --muted: 50 20% 95%;
+    --muted: 140 25% 94%;
     --muted-foreground: 156 15% 45%;
 
     --accent: 25 95% 65%;
@@ -32,33 +33,26 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 50 20% 90%;
-    --input: 50 20% 92%;
+    --border: 140 20% 88%;
+    --input: 140 20% 92%;
     --ring: 156 65% 25%;
 
     /* Custom design tokens */
     --gradient-hero: linear-gradient(135deg, hsl(156 65% 25%), hsl(156 55% 35%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(50 20% 98%));
+    --gradient-card: linear-gradient(180deg, hsl(140 15% 98%), hsl(140 20% 96%));
     --shadow-elegant: 0 10px 30px -10px hsl(156 65% 25% / 0.2);
     --shadow-glow: 0 0 40px hsl(45 85% 70% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
+    --sidebar-background: 140 20% 96%;
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
+    --sidebar-primary-foreground: 140 20% 96%;
+    --sidebar-accent: 140 25% 94%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
+    --sidebar-border: 140 20% 88%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 

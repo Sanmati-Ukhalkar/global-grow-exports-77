@@ -1,6 +1,8 @@
+
 import { Facebook, Instagram, Linkedin, Twitter, MessageCircle, Mail, Phone, MapPin, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -29,19 +31,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-display font-bold mb-4">
-              {t('footer.company')}
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Logo size={32} className="bg-primary-foreground/10" />
+              <h3 className="text-2xl font-display font-bold">
+                {t('footer.company')}
+              </h3>
+            </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
               {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://wa.me/+917350072855" 
+                href="https://wa.me/+919529390430" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-smooth"
-                title="WhatsApp: +91 73500 72855"
+                title="WhatsApp: +91 95293 90430"
               >
                 <MessageCircle className="h-5 w-5" />
               </a>

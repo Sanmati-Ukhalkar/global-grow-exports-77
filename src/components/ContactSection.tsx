@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -39,7 +40,7 @@ const ContactSection = () => {
     name: "products"
   });
 
-  const whatsappNumber = "+917350072855";
+  const whatsappNumber = "+919529390430";
   
   const products = [
     "Basmati Rice",
@@ -111,7 +112,7 @@ Please provide more information about pricing and availability.`;
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">{t('contact.info.phone')}</div>
+                    <div className="text-sm text-muted-foreground">+91 95293 90430</div>
                   </div>
                 </div>
                 

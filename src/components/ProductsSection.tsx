@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
@@ -74,14 +75,17 @@ const ProductsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="group bg-gradient-card border-border/50 hover:shadow-elegant transition-smooth overflow-hidden">
+            <Card 
+              key={product.id} 
+              className="bg-gradient-card border-border/50 hover:scale-105 transition-all duration-300 hover:shadow-elegant overflow-hidden cursor-pointer"
+            >
               <div className="relative overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-smooth"
+                  className="w-full h-48 object-cover transition-smooth"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>
               
               <div className="p-6">
@@ -105,11 +109,11 @@ const ProductsSection = () => {
 
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:border-primary/40 group-hover:bg-primary/5"
+                  className="w-full"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t('products.viewDetails')}
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-smooth" />
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
             </Card>

@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "./Logo";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -16,7 +18,7 @@ const Header = () => {
     { name: t('nav.contact'), href: "#contact" },
   ];
 
-  const whatsappNumber = "+917350072855";
+  const whatsappNumber = "+919529390430";
   const whatsappMessage = "Hello! I'm interested in your export services.";
 
   return (
@@ -24,7 +26,8 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center space-x-3">
+            <Logo size={40} />
             <h1 className="text-2xl font-display font-bold text-primary">
               Groww Internationals
             </h1>
