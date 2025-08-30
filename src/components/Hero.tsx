@@ -121,19 +121,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <div className="text-center bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-xl border border-primary-foreground/20">
+            <div className="text-center bg-primary/20 p-4 rounded-xl border border-primary/30">
               <div className="text-2xl font-bold text-secondary">50+</div>
               <div className="text-sm">Countries Served</div>
             </div>
-            <div className="text-center bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-xl border border-primary-foreground/20">
+            <div className="text-center bg-primary/20 p-4 rounded-xl border border-primary/30">
               <div className="text-2xl font-bold text-secondary">1000+</div>
               <div className="text-sm">Happy Clients</div>
             </div>
-            <div className="text-center bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-xl border border-primary-foreground/20">
+            <div className="text-center bg-primary/20 p-4 rounded-xl border border-primary/30">
               <div className="text-2xl font-bold text-secondary">ISO</div>
               <div className="text-sm">Certified</div>
             </div>
-            <div className="text-center bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-xl border border-primary-foreground/20">
+            <div className="text-center bg-primary/20 p-4 rounded-xl border border-primary/30">
               <div className="text-2xl font-bold text-secondary">24/7</div>
               <div className="text-sm">Support</div>
             </div>
