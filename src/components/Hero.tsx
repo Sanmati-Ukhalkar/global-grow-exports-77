@@ -41,7 +41,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <span className="inline-block bg-secondary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-4 backdrop-blur-sm border border-primary-foreground/20">
-              Global Grow Exports • Premium Quality Since 2009
+              GrowwInternationals • Premium Quality Since 2009
             </span>
           </motion.div>
 

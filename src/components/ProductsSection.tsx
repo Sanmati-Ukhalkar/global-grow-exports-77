@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import ProductModal from "./ProductModal";
 import riceImage from "@/assets/rice-product.jpg";
 import coffeeImage from "@/assets/coffee-product.jpg";
 import spicesImage from "@/assets/spices-product.jpg";
@@ -13,6 +15,8 @@ import medicinesImage from "@/assets/medicines-product.jpg";
 
 const ProductsSection = () => {
   const { t } = useTranslation();
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const products = [
     {
@@ -77,6 +81,15 @@ const ProductsSection = () => {
     }
   ];
 
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   return (
     <>
@@ -113,7 +126,8 @@ const ProductsSection = () => {
                 viewport={{ once: true }}
               >
                 <Card 
-                  className="bg-gradient-card border-border/50 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden group"
+                  className="bg-gradient-card border-border/50 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer overflow-hidden group"
+                  onClick={() => handleProductClick(product)}
                 >
                   <div className="relative overflow-hidden">
                     <img 
@@ -158,6 +172,12 @@ const ProductsSection = () => {
         </div>
       </section>
 
+      {/* Product Modal */}
+      <ProductModal 
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   );
 };

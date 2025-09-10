@@ -29,7 +29,7 @@ const Header = () => {
           <div className="flex-shrink-0 flex items-center space-x-3">
             <Logo size={40} />
             <h1 className="text-xl sm:text-2xl font-display font-bold text-primary">
-              Global Grow Exports
+              GrowwInternationals
             </h1>
           </div>
 
