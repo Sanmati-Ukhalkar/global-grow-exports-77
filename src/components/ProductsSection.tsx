@@ -180,6 +180,7 @@ const ProductsSection = () => {
         product={selectedProduct}
         isOpen={isModalOpen}
         onClose={closeModal}
+        triggerSource="products-section"
       />
     </>
   );

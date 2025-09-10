@@ -20,9 +20,10 @@ interface ProductModalProps {
   product: Product | null;
   isOpen: boolean;
   onClose: () => void;
+  triggerSource?: 'products-section' | 'other';
 }
 
-const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
+const ProductModal = ({ product, isOpen, onClose, triggerSource = 'other' }: ProductModalProps) => {
   const { t } = useTranslation();
 
   // Disable body scroll when modal is open - must be before any early returns
@@ -43,11 +44,16 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
 
   if (!product) return null;
 
+  // Conditional positioning based on trigger source
+  const isProductsSection = triggerSource === 'products-section';
+  const modalAlignment = isProductsSection ? 'items-start pt-20' : 'items-center';
+  const modalMaxHeight = isProductsSection ? 'max-h-[80vh]' : 'max-h-[90vh]';
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md"
+          className={`fixed inset-0 z-[9999] flex ${modalAlignment} justify-center bg-black/80 backdrop-blur-md`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -61,7 +67,7 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
           }}
         >
           <motion.div
-            className="bg-card/95 backdrop-blur-md rounded-2xl shadow-2xl border border-border/20 w-full max-w-6xl max-h-[90vh] overflow-y-auto mx-4"
+            className={`bg-card/95 backdrop-blur-md rounded-2xl shadow-2xl border border-border/20 w-full max-w-6xl ${modalMaxHeight} overflow-y-auto mx-4`}
             initial={{ scale: 0.8, opacity: 0, y: 50 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 50 }}
