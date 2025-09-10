@@ -3,9 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { ArrowRight, Eye } from "lucide-react";
-import { useState } from "react";
-import ProductModal from "./ProductModal";
+import { ArrowRight } from "lucide-react";
 import riceImage from "@/assets/rice-product.jpg";
 import coffeeImage from "@/assets/coffee-product.jpg";
 import spicesImage from "@/assets/spices-product.jpg";
@@ -15,8 +13,6 @@ import medicinesImage from "@/assets/medicines-product.jpg";
 
 const ProductsSection = () => {
   const { t } = useTranslation();
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const products = [
     {
@@ -81,15 +77,6 @@ const ProductsSection = () => {
     }
   ];
 
-  const handleProductClick = (product: any) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-  };
 
   return (
     <>
@@ -126,8 +113,7 @@ const ProductsSection = () => {
                 viewport={{ once: true }}
               >
                 <Card 
-                  className="bg-gradient-card border-border/50 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer overflow-hidden group"
-                  onClick={() => handleProductClick(product)}
+                  className="bg-gradient-card border-border/50 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden group"
                 >
                   <div className="relative overflow-hidden">
                     <img 
@@ -136,9 +122,6 @@ const ProductsSection = () => {
                       className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent group-hover:from-primary/30 transition-all duration-300"></div>
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <Eye className="h-4 w-4 text-primary" />
-                    </div>
                   </div>
                   
                   <div className="p-6">
@@ -175,13 +158,6 @@ const ProductsSection = () => {
         </div>
       </section>
 
-      {/* Product Modal */}
-      <ProductModal 
-        product={selectedProduct}
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        triggerSource="products-section"
-      />
     </>
   );
 };
