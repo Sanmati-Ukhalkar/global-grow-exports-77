@@ -25,9 +25,7 @@ interface ProductModalProps {
 const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
   const { t } = useTranslation();
 
-  if (!product) return null;
-
-  // Disable body scroll when modal is open
+  // Disable body scroll when modal is open - must be before any early returns
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -42,6 +40,8 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
       document.body.style.paddingRight = 'unset';
     };
   }, [isOpen]);
+
+  if (!product) return null;
 
   return (
     <AnimatePresence>
