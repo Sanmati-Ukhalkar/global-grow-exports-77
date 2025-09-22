@@ -48,9 +48,9 @@
       "submit": "Send Message"
     },
     "info": {
-      "address": "Nashik, Maharashtra, India",
-      "phone": "+91 73500 72855",
-      "email": "info@growwinternationals.com"
+    "address": "Nashik, Maharashtra, India",
+  "phone": "+91 73500 72855",
+  "email": "info@growwinternationals.com"
     }
   },
   "footer": {
@@ -58,7 +58,7 @@
     "description": "Leading exporter of premium Indian agricultural and traditional products",
     "quickLinks": "Quick Links",
     "ourProducts": "Our Products",
-    "contactInfo": "Contact Info",
+  "contactInfo": "Contact Info",
     "followUs": "Follow Us",
     "copyright": "© 2024 GrowwInternationals. All rights reserved.",
     "privacy": "Privacy Policy",

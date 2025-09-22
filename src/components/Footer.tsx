@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <Logo size={32} className="bg-primary-foreground/10" />
+              <Logo size={64} className="" />
               <h3 className="text-2xl font-display font-bold">
                 {t('footer.company')}
               </h3>
@@ -42,11 +42,11 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://wa.me/+919529390430" 
+                href="https://wa.me/+917350072855" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-smooth"
-                title="WhatsApp: +91 95293 90430"
+                title="WhatsApp: +91 73500 72855"
               >
                 <MessageCircle className="h-5 w-5" />
               </a>
@@ -58,9 +58,9 @@ const Footer = () => {
                 <Mail className="h-5 w-5" />
               </a>
               <a 
-                href="tel:+919529390430"
+                href="tel:+917350072855"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-smooth"
-                title="Phone: +91 95293 90430"
+                title="Phone: +91 73500 72855"
               >
                 <Phone className="h-5 w-5" />
               </a>
@@ -108,21 +108,21 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-primary-foreground/60" />
                 <a 
-                  href="https://maps.google.com/?q=Mumbai,Maharashtra,India"
+                  href="https://maps.google.com/?q=Nashik,Maharashtra,India"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  Mumbai, Maharashtra, India
+                  Nashik, Maharashtra, India
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary-foreground/60" />
                 <a 
-                  href="tel:+919529390430"
+                  href="tel:+917350072855"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  +91 95293 90430
+                  +91 73500 72855
                 </a>
               </div>
               <div className="flex items-center space-x-3">

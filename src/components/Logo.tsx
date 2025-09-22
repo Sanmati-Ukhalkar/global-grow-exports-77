@@ -11,8 +11,8 @@ const Logo: React.FC<LogoProps> = ({ size = 32, className = "" }) => {
     <img 
       src="/lovable-uploads/477202ae-01a0-4eb0-b182-2d0557b1423b.png"
       alt="GrowwInternationals Logo"
-      className={`rounded-lg ${className}`}
-      style={{ width: size, height: size }}
+      className={className}
+      style={{ width: size, height: size, background: 'none' }}
     />
   );
 };

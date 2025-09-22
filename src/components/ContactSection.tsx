@@ -11,6 +11,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useForm, useFieldArray } from "react-hook-form";
+import { Controller } from "react-hook-form";
+import emailjs from 'emailjs-com';
 
 interface FormData {
   name: string;
@@ -40,7 +42,7 @@ const ContactSection = () => {
     name: "products"
   });
 
-  const whatsappNumber = "+919529390430";
+  const whatsappNumber = "+917350072855";
   
   const products = [
     "Basmati Rice",
@@ -55,16 +57,39 @@ const ContactSection = () => {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "Quote Request Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    reset();
+    // Filter out empty products for email
+    const filteredProducts = data.products.filter(p => p.product && p.quantity);
+
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      products: filteredProducts,
+      message: data.message
+    };
+
+    // Debug log to verify data sent to EmailJS
+    console.log('EmailJS templateParams:', templateParams);
+
+    try {
+      await emailjs.send(
+        'service_274zi52', // EmailJS service ID
+        'template_vj8bp2p', // EmailJS template ID
+        templateParams,
+        'KlVs15lwC068CDSfZ' // EmailJS public key
+      );
+      toast({
+        title: "Quote Request Sent!",
+        description: "Your request has been sent via email. We'll get back to you soon.",
+      });
+      reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send quote request. Please try again later.",
+        variant: "destructive"
+      });
+    }
     setIsSubmitting(false);
   };
 
@@ -112,7 +137,7 @@ Please provide more information about pricing and availability.`;
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">+91 95293 90430</div>
+                    <div className="text-sm text-muted-foreground">+91 73500 72855</div>
                   </div>
                 </div>
                 
@@ -235,18 +260,24 @@ Please provide more information about pricing and availability.`;
                       className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 border border-border/50 rounded-lg"
                     >
                       <div className="md:col-span-2">
-                        <Select {...control.register(`products.${index}.product`)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a product" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {products.map((product) => (
-                              <SelectItem key={product} value={product}>
-                                {product}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <Controller
+                          control={control}
+                          name={`products.${index}.product`}
+                          render={({ field }) => (
+                            <Select value={field.value} onValueChange={field.onChange}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select a product" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {products.map((product) => (
+                                  <SelectItem key={product} value={product}>
+                                    {product}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          )}
+                        />
                       </div>
                       <div className="flex gap-2">
                         <Input

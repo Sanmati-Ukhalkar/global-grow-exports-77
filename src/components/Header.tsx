@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
-            <Logo size={40} />
+            <Logo size={64} />
             <h1 className="text-xl sm:text-2xl font-display font-bold text-primary">
               GrowwInternationals
             </h1>
